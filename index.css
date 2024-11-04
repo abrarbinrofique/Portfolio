@@ -314,3 +314,7 @@ img {
 }
 
 /* Optional: Override color when hovering */
+
+.bgs{
+    background-color: #3b3939;
+}
