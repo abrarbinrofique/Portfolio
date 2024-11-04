@@ -1,23 +1,19 @@
+
+
 .dow{
     background-color: #5999B2;
     padding: 3;
 }
 
 
-.img
-{
-    background-color: #5999B2;
-}
 
-.btn{
-    background-color: #5999B2;
-}
-
+/* 
 .edu
 
 {
-    color:#5999B2 ;
-}
+    width:10%
+
+} */
 
 .lnk{
     color: rgb(68, 68, 228);
@@ -26,3 +22,295 @@
 .yu{
     color: rgb(193, 21, 21);
 }
+
+
+body{
+    background-color:#1c1b1b;
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+img {
+    border:1 px #9a1a1a solid;
+}
+
+
+.navbar-tertiary .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+.context {
+   
+    /* position: absolute; */
+   background-color: #1c1b1b;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background-color:rgb(27, 27, 27);
+    width: 100%;
+    /* height:100vh; */
+    
+   
+}
+
+.circles{
+ 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 52s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 54s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+
+
+.bodiexsz{
+
+    border-radius: 20px;
+    background-color: #060606; 
+   
+}
+
+
+.apis{
+    width: 5%;
+}
+
+.logos{
+    margin-top: 230px;
+}
+
+
+
+.vertical-line {
+    width: 20%;            /* Full width of the container or page */
+    height: 2px;            /* Thickness of the line */
+    background-color: white; /* Color of the line */
+    /* position: absolute; */
+             /* Position in the middle of the page */
+    left: 8; /* Adjust to center exactly */
+}
+
+
+.des{
+    width: 40%;
+}
+
+/* Default (extra small screens and up) */
+.linux {
+    height: 14%;
+    width: 14%;
+}
+
+/* Small screens (sm) */
+@media (min-width: 576px) {
+    .linux {
+        height: 15%; /* Adjust percentage for small screens */
+        width: 15%;
+    }
+}
+
+/* Medium screens (md) */
+@media (min-width: 768px) {
+    .linux {
+        height: 15%; /* Adjust percentage for small screens */
+        width: 15%;
+    }
+}
+
+/* Large screens (lg) */
+@media (min-width: 992px) {
+    .linux {
+        height: 15%; /* Adjust percentage for small screens */
+        width: 15%;
+    }
+}
+
+/* Extra Large screens (xl) */
+@media (min-width: 1200px) {
+    .linux {
+        height: 15%; /* Adjust percentage for small screens */
+        width: 15%;
+    }
+}
+
+/* Extra Extra Large screens (xxl) */
+@media (min-width: 1400px) {
+    .linux {
+        height: 4%; /* Adjust percentage for extra-extra-large screens */
+        width: 4%;
+    }
+}
+
+
+.project {
+    width: 30%; 
+    
+  }
+  
+  .project-image {
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover;
+    border-radius: 8px; 
+  }
+  
+  .gits{
+    margin-top: 15px;
+  }
+
+
+  .ads{
+    border-radius: 20px;
+  }
+
+  .fots{
+    margin-top: 3vw;
+    background-color: #060606;
+  }
+
+  .dec {
+    text-decoration: none; /* Remove underline if desired */
+}
+
+/* Set icon color to black or your preferred color */
+.custom-color {
+    color: rgb(255, 255, 255); /* Change 'black' to any color you prefer */
+}
+
+/* Optional: Override color when hovering */
