@@ -316,7 +316,7 @@ img {
 /* Optional: Override color when hovering */
 
 .bgs{
-    background-color: #3b3939;
+    background-color: #2a2828;
 }
 
 
@@ -324,4 +324,9 @@ img {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+
+.clickable {
+    cursor: pointer; /* Changes the cursor to a hand pointer */
 }
