@@ -318,3 +318,10 @@ img {
 .bgs{
     background-color: #3b3939;
 }
+
+
+.text-truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
