@@ -228,9 +228,13 @@ img {
 
 
 .des{
-    width: 40%;
+    width: 70%;
 }
 
+
+.bgg{
+    background-color: #978e8e;
+}
 /* Default (extra small screens and up) */
 .linux {
     height: 14%;
@@ -329,4 +333,16 @@ img {
 
 .clickable {
     cursor: pointer; /* Changes the cursor to a hand pointer */
+}
+
+.jus{
+  margin-left: 35px;
+  margin-right: 35px;
+
+}
+
+.vv{
+    border: 2px solid lightcyan;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
