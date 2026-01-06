@@ -1,85 +1,115 @@
 "use client";
 
-import Link from "next/link";
+import { motion } from "framer-motion";
+import { Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 const Projects = () => {
     const projects = [
         {
-            title: "Homper",
-            tech: ["Django REST", "React", "SSLCommerz"],
-            description: "Home service platform enabling users to book and review services. Implemented secure payment via SSLCommerz and full admin control for order management.",
-            link: "#", // Placeholder
-            github: "#", // Placeholder
+            title: "Homper - Home Service System",
+            description: "A convenient online platform offering reliable home, office, and outlawn services to simplify your needs.",
+            tech: ["Django", "React", "HTML", "CSS", "JS"],
+            color: "bg-card-blue",
+            image: "/hScreenshot_২০২৪১১০৪_১৩৫৮১১.png",
+            live: "https://abrarbinrofique.github.io/Homper-frontend/",
+            github: "https://github.com/abrarbinrofique/Homeper-backend",
         },
         {
-            title: "NoMad",
-            tech: ["Django", "WebSockets", "PostgreSQL"],
-            description: "Travel & Social Platform allowing users to plan group travels and chat within travel groups. Developed friend request and group-join logic with seat-limiting features.",
-            link: "#", // Placeholder
-            github: "#", // Placeholder
+            title: "NoMad - Travel Sharing Platform",
+            description: "A travel sharing site for finding travel partners and sharing memories.",
+            tech: ["Django", "React", "HTML", "CSS", "JS"],
+            color: "bg-card-green",
+            image: "/nScreenshot_২০২৪১১০৪_১৪০০১২.png",
+            live: "https://abrarbinrofique.github.io/NorMad-Frontend/",
+            github: "https://github.com/abrarbinrofique/NorMad-Bakend",
         },
         {
-            title: "Weather Data ETL Pipeline",
-            tech: ["Apache Airflow", "PostgreSQL", "Open-Meteo API"],
-            description: "Automated weather data collection and transformation via Open-Meteo API. Scheduled and monitored ETL workflows using Apache Airflow for scalable ingestion.",
-            link: "#", // Placeholder
-            github: "#", // Placeholder
+            title: "MailScraper - Email Marketing System",
+            description: "A website email scraper system for email marketing purposes. Search for a website address and scrape all emails.",
+            tech: ["Django", "React", "CSS"],
+            color: "bg-card-blue",
+            image: "/mails.png",
+            live: "#",
+            github: "https://github.com/abrarbinrofique/Email-scrapper-",
         },
     ];
 
     return (
         <section id="projects" className="py-20 relative">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-16 text-white">
-                    Featured <span className="text-neon-cyan">Projects</span>
-                </h2>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-4xl md:text-5xl font-bold font-display mb-4">
+                        Featured <span className="text-accent">Projects</span>
+                    </h2>
+                    <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="glass p-8 rounded-xl group hover:border-neon-purple transition-all duration-300 flex flex-col h-full hover:-translate-y-2"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.2 }}
+                            className={`${project.color} rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group`}
                         >
-                            <div className="mb-4 flex flex-wrap gap-2">
-                                {project.tech.map((t, i) => (
-                                    <span
-                                        key={i}
-                                        className="text-xs font-mono px-2 py-1 rounded bg-neon-purple/10 text-neon-purple border border-neon-purple/20"
+                            {/* Image Container */}
+                            <div className="relative h-48 overflow-hidden">
+                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                />
+                            </div>
+
+                            {/* Content */}
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                                <p className="text-gray-200 mb-4 text-sm line-clamp-3">
+                                    {project.description}
+                                </p>
+
+                                {/* Tech Stack Badges */}
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    {project.tech.map((t, i) => (
+                                        <span key={i} className="px-2 py-1 bg-white/10 rounded text-xs text-white font-medium backdrop-blur-sm">
+                                            {t}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* Buttons */}
+                                <div className="flex gap-4">
+                                    {project.live !== "#" && (
+                                        <a
+                                            href={project.live}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex-1 py-2 bg-white text-primary-dark font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-accent transition-colors text-sm"
+                                        >
+                                            Live Demo <ExternalLink size={16} />
+                                        </a>
+                                    )}
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex-1 py-2 border border-white/20 text-white font-medium rounded-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-colors text-sm"
                                     >
-                                        {t}
-                                    </span>
-                                ))}
+                                        Code <Github size={16} />
+                                    </a>
+                                </div>
                             </div>
-
-                            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors duration-300">
-                                {project.title}
-                            </h3>
-
-                            <p className="text-gray-400 mb-6 flex-grow">
-                                {project.description}
-                            </p>
-
-                            <div className="flex gap-4 mt-auto">
-                                <Link
-                                    href={project.github}
-                                    className="text-sm font-bold text-white hover:text-neon-cyan transition-colors duration-300 flex items-center gap-2"
-                                >
-                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                                    </svg>
-                                    Code
-                                </Link>
-                                <Link
-                                    href={project.link}
-                                    className="text-sm font-bold text-white hover:text-neon-purple transition-colors duration-300 flex items-center gap-2"
-                                >
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                    </svg>
-                                    Live Demo
-                                </Link>
-                            </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

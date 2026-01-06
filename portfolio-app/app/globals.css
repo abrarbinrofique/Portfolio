@@ -5,20 +5,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap');
 
 :root {
-  --background: #050505;
+  --background: #172554;
+  /* Deep Blue (Blue 950) */
+  --foreground: #f8fafc;
+  /* Slate 50 */
+  --primary: #1e3a8a;
+  /* Blue 900 */
+  --primary-dark: #172554;
+  /* Blue 950 */
+  --accent: #d4a574;
+  --accent-light: #e8b87f;
+  --secondary: #64748b;
+  --glass-bg: rgba(23, 37, 84, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.dark {
+  --background: #000000;
+  /* Pure Black */
   --foreground: #ededed;
-  --neon-cyan: #00f3ff;
-  --neon-purple: #bc13fe;
-  --dark-bg: #0a0e27;
-  --deep-blue: #0f1729;
-  --glass-bg: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.15);
-  --skill-box-bg: rgba(255, 255, 255, 0.12);
+  --primary: #020617;
+  /* Slate 950 */
+  --primary-dark: #000000;
+  /* Pure Black */
+  --accent: #d4a574;
+  --accent-light: #e8b87f;
+  --secondary: #334155;
+  --glass-bg: rgba(0, 0, 0, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes aura {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 body {
-  color: rgb(var(--foreground));
-  background: linear-gradient(135deg, #0a0e27 0%, #0f1729 50%, #1a1f3a 100%);
+  color: var(--foreground);
+  background: var(--background);
+  background-image: linear-gradient(-45deg, var(--primary-dark), var(--primary), var(--secondary), var(--primary-dark));
+  background-size: 400% 400%;
+  animation: aura 15s ease infinite;
   background-attachment: fixed;
   font-family: var(--font-sans);
   overflow-x: hidden;

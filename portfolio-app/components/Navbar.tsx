@@ -1,11 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,91 +17,66 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: "Home", href: "#home" },
-        { name: "About", href: "#about" },
-        { name: "Experience", href: "#experience" },
-        { name: "Projects", href: "#projects" },
-        { name: "Contact", href: "#contact" },
+        { name: "HOME", href: "#hero" },
+        { name: "ABOUT", href: "#about" },
+        { name: "PROJECTS", href: "#projects" },
+        { name: "CONTACT", href: "#contact" },
     ];
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "glass py-4" : "bg-transparent py-6"
+            className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-primary/90 backdrop-blur-md py-4 shadow-lg" : "bg-transparent py-6"
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <Link href="/" className="text-2xl font-display font-bold text-white group">
-                    <span className="text-neon-cyan group-hover:text-neon-purple transition-colors duration-300">
-                        &lt;
-                    </span>
-                    Abrar
-                    <span className="text-neon-cyan group-hover:text-neon-purple transition-colors duration-300">
-                        /&gt;
-                    </span>
-                </Link>
+                <a href="#" className="text-2xl font-bold font-display text-foreground">
+                    ABRAR<span className="text-accent">.</span>
+                </a>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex space-x-8">
                     {navLinks.map((link) => (
-                        <Link
+                        <a
                             key={link.name}
                             href={link.href}
-                            className="text-gray-300 hover:text-neon-cyan transition-colors duration-300 text-sm uppercase tracking-wider font-medium relative group"
+                            className="text-sm font-medium tracking-wider text-gray-300 hover:text-accent transition-colors duration-300 relative group"
                         >
                             {link.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-cyan transition-all duration-300 group-hover:w-full"></span>
-                        </Link>
+                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                        </a>
                     ))}
                 </div>
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-white focus:outline-none"
+                    className="md:hidden text-foreground hover:text-accent transition-colors"
                     onClick={() => setIsOpen(!isOpen)}
                 >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        {isOpen ? (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        ) : (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                        )}
-                    </svg>
+                    {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
-            </div>
 
-            {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full glass border-t border-glass-border">
-                    <div className="flex flex-col py-4 px-6 space-y-4">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                className="text-gray-300 hover:text-neon-cyan transition-colors duration-300 text-sm uppercase tracking-wider"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {link.name}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            )}
+                {/* Mobile Menu */}
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="absolute top-full left-0 w-full bg-primary-dark/95 backdrop-blur-xl border-b border-white/10 md:hidden"
+                    >
+                        <div className="flex flex-col p-6 space-y-4">
+                            {navLinks.map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="text-lg font-medium text-gray-300 hover:text-accent transition-colors"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {link.name}
+                                </a>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </div>
         </nav>
     );
 };
