@@ -1,0 +1,69 @@
+ABRAR BIN ROFIQUE
+Python & AI Engineer || Backend Developer || Django || FastAPI || LangChain || RAG Systems
++8801928051705
+
+researchabrarrofique@gmail.com
+
+abrarbinrofique/
+
+abrarbinrofique/
+
+Graduate AI Engineer at FlowgenX AI with hands-on experience in backend development, API integration, and AI-driven
+automation. Skilled in Django, FastAPI, and PostgreSQL with a strong foundation in data pipelines, cloud integration, and
+retrieval-augmented generation (RAG). Experienced in designing and implementing OpenAPI specifications for over 100+
+platform integrations, ensuring seamless interoperability across systems. Proficient in vectorization workflows and vector
+databases such as Chroma and Pinecone, leveraging them for context-aware RAG pipelines. Possess solid knowledge of AWS
+and Google Cloud Storage (GCS) for scalable data and model management. Passionate about building intelligent, data-driven
+systems that bridge AI engineering and backend architecture for real-world impact.
+
+Work Experience
+San Francisco, USA (Remote) | Jan 2025 – Present
+
+FlowGenx AI, Graduate AI Engineer
+
+Implemented OAuth2-based authentication and token security workflows across multiple connectors for safe and scalable
+API access.
+Engineered native and external connectors for over 100+ platforms, including Jira, AWS, Google Cloud Storage (GCS),
+ServiceNow, Microsoft Teams, Outlook, and more.
+Developed and maintained vector-based retrieval systems (VectorVerse) utilizing multiple vector database for RAG
+(Retrieval-Augmented Generation) pipelines.
+Built internal API routing components to automate workflow orchestration, enabling seamless integration between
+connectors and AI modules.
+Canada (Remote) | Oct 2024 – Dec 2024
+
+Arbor AI Studio, Full Stack Developer
+
+Contributed to an ATS (Applicant Tracking System) AI project using Express.js, React, and Tailwind CSS.
+Integrated Google Cloud APIs for data enrichment and automation.
+Managed version control and team collaboration using Git/GitHub.
+
+SKILLS
+Languages: Python | JavaScript | C | C++ | SQL
+Frameworks: Django | FastAPI | Express.js | React.js | LangChain
+AI & Data Engineering: RAG | Vector Databases (Chroma, Pinecone) | Vectorization | MCP | ETL Pipelines | Apache Airflow
+Cloud & Deployment: AWS | Google Cloud (GCP) | Render | Vercel | Supabase
+API & Integration: OpenAPI Specifications | REST API | OAuth2 | JWT | Connector Integrations
+Databases: PostgreSQL | MySQL | MongoDB
+Tools: Git | Docker | Cloudinary | Jira | SSLCommerz | GitHub
+Soft Skills: Problem Solving | Collaboration | Adaptability | Continuous Learning
+
+Education & Certification
+Shahjalal University of Science & Technology (SUST)
+B.Sc. in Geography and Environment | 2020 – 2025
+
+Phitron Fall 2023: C, C++, Data Structures, Python, MySQL, Django
+Future Ready Bangladesh – GP Academy
+Regional Bio Olympiad 2018 – Second Runner-Up
+
+PROJECTS
+Homper (Django REST + React)
+Home service platform enabling users to book and review services.
+Implemented secure payment via SSLCommerz and full admin control for order management.
+NoMad (Travel & Social Platform)
+Django-based platform allowing users to plan group travels and chat within travel groups.
+Developed friend request and group-join logic with seat-limiting features.
+Weather Data ETL Pipeline (Airflow + PostgreSQL)
+Automated weather data collection and transformation via Open-Meteo API.
+Scheduled and monitored ETL workflows using Apache Airflow for scalable ingestion.
+
+
